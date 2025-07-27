@@ -61,20 +61,28 @@ export default function Home() {
   };
 
   return (
-    <main style={{ margin: "24px" }}>
-      <h1>Solace Advocates</h1>
-      <br />
-      <br />
-      <div className="search-term-container">
-        <p className="search-term-header">Search</p>
-        <p>Searching for:</p>
-        <input type="text" value={searchTerm} />
-        <input style={{ border: "1px solid black" }} onChange={onChange} />
-        <button onClick={onClick}>Reset Search</button>
+    <main className="p-4">
+      <h1 className="text-4xl">Solace Advocates</h1>
+
+      <div className="search-term-container h-100 my-4 border-2 border-indigo-600 rounded-sm p-1 flex flex-row justify-start align-center">
+        <p className="mr-1">Searching for:</p>
+
+        <input
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg"
+          type="text"
+          onChange={onChange}
+          value={searchTerm}
+        />
+
+        <button
+          className="ml-2 p-2 border rounded-md bg-sky-500 hover:bg-sky-700"
+          onClick={onClick}
+        >
+          Reset Search
+        </button>
       </div>
-      <br />
-      <br />
-      <table className="advocates-table">
+
+      <table className="advocates-table table-auto">
         <thead className="advocates-table-header">
           <tr>
             {tableHeaders?.map((header) => (
