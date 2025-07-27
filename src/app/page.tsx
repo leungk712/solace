@@ -2,6 +2,17 @@
 
 import { useEffect, useState, useMemo } from "react";
 
+// ===== Constants ===== //
+const tableHeaders = [
+  "First Name",
+  "Last Name",
+  "City",
+  "Degree",
+  "Specialties",
+  "Years of Experience",
+  "Phone Number",
+];
+
 // ===== Interfaces ===== //
 import { Advocate } from "./interfaces/Advocates";
 import { Specialty } from "./interfaces/Specialty";
@@ -39,8 +50,6 @@ export default function Home() {
   const onChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = evt.target.value.toString();
 
-    document.getElementById("search-term").innerHTML = searchTerm;
-
     setSearchTerm(searchTerm);
 
     console.log("filtering advocates...");
@@ -56,26 +65,24 @@ export default function Home() {
       <h1>Solace Advocates</h1>
       <br />
       <br />
-      <div>
-        <p>Search</p>
-        <p>
-          Searching for: <span id="search-term"></span>
-        </p>
+      <div className="search-term-container">
+        <p className="search-term-header">Search</p>
+        <p>Searching for:</p>
+        <input type="text" value={searchTerm} />
         <input style={{ border: "1px solid black" }} onChange={onChange} />
         <button onClick={onClick}>Reset Search</button>
       </div>
       <br />
       <br />
-      <table>
-        <thead>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>City</th>
-          <th>Degree</th>
-          <th>Specialties</th>
-          <th>Years of Experience</th>
-          <th>Phone Number</th>
+      <table className="advocates-table">
+        <thead className="advocates-table-header">
+          <tr>
+            {tableHeaders?.map((header) => (
+              <th key={header}>{header}</th>
+            ))}
+          </tr>
         </thead>
+
         <tbody>
           {filteredAdvocates?.map((advocate: Advocate, index: number) => {
             return (
