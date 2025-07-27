@@ -9,7 +9,6 @@ import { Specialty } from "./interfaces/Specialty";
 export default function Home() {
   const [advocates, setAdvocates] = useState<Advocate[]>([]);
   const [searchTerm, setSearchTerm] = useState<string | Specialty>("");
-  // const [filteredAdvocates, setFilteredAdvocates] = useState<Advocate[]>([]);
 
   const filteredAdvocates = useMemo(() => {
     if (searchTerm) {
