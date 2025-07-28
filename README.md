@@ -1,6 +1,6 @@
 ## Solace Candidate Assignment
 
-![solace-kevin-leung](https://github.com/user-attachments/assets/28ade57d-4797-48b3-b94b-319c41fa378a)
+https://github.com/user-attachments/assets/27e817dd-44e8-493a-a6f0-57cc166f68fd
 
 ## Pull Requests
 
