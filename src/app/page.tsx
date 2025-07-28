@@ -45,7 +45,9 @@ export default function Home() {
           lastName.toUpperCase().includes(formattedSearchTerm) ||
           city.toUpperCase().includes(formattedSearchTerm) ||
           degree.toUpperCase().includes(formattedSearchTerm) ||
-          formattedSpecialties.includes(formattedSearchTerm as Specialty) ||
+          formattedSpecialties?.some((specialty) =>
+            specialty.includes(formattedSearchTerm)
+          ) ||
           yearsOfExperience?.toString()?.includes(formattedSearchTerm) ||
           phoneNumber?.toString()?.includes(formattedSearchTerm)
         );
