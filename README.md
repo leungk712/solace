@@ -1,5 +1,14 @@
 ## Solace Candidate Assignment
 
+![solace-kevin-leung](https://github.com/user-attachments/assets/28ade57d-4797-48b3-b94b-319c41fa378a)
+
+## Pull Requests
+
+1. [Part 1: Implement Typings](https://github.com/leungk712/solace/pull/1)
+2. [Part 2: Update Search Logic and Table](https://github.com/leungk712/solace/pull/2)
+3. [Part 3: Update UI](https://github.com/leungk712/solace/pull/3)
+4. [Part 4: Documentation](https://github.com/leungk712/solace/pull/4)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
