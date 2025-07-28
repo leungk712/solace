@@ -80,11 +80,13 @@ export default function Home() {
   };
 
   return (
-    <main className="p-4">
-      <h1 className="text-4xl">Solace Advocates</h1>
+    <main className="main p-4">
+      <h1 className="main-header text-4xl">Solace Advocates</h1>
 
-      <div className="search-term-container h-100 my-4 border-2 border-indigo-600 rounded-sm p-1 flex flex-row justify-start align-center">
-        <p className="mr-1">Searching for:</p>
+      <div className="search-term-container h-100 my-4 border-2 border-gray-600 rounded-sm p-1 flex flex-row justify-start align-center">
+        <p className="mr-1 flex flex-col justify-center align-center">
+          Searching for:
+        </p>
 
         <input
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg"
@@ -101,32 +103,45 @@ export default function Home() {
         </button>
       </div>
 
-      <table className="advocates-table table-auto">
+      <table className="advocates-table w-full table-auto">
         <thead className="advocates-table-header">
           <tr>
             {tableHeaders?.map((header) => (
-              <th key={header}>{header}</th>
+              <th key={header} className="text-left">
+                {header}
+              </th>
             ))}
           </tr>
         </thead>
 
-        <tbody>
+        <tbody className="advocates-table-body">
           {filteredAdvocates?.map((advocate: Advocate, index: number) => {
+            const {
+              firstName,
+              lastName,
+              city,
+              degree,
+              specialties,
+              yearsOfExperience,
+              phoneNumber,
+            } = advocate;
+
             return (
-              <tr key={`${advocate}-${index}`}>
-                <td>{advocate.firstName}</td>
-                <td>{advocate.lastName}</td>
-                <td>{advocate.city}</td>
-                <td>{advocate.degree}</td>
+              <tr
+                key={`${advocate}-${index}`}
+                className="border-2 border-gray-600"
+              >
+                <td>{firstName}</td>
+                <td>{lastName}</td>
+                <td>{city}</td>
+                <td>{degree}</td>
                 <td>
-                  {advocate.specialties.map(
-                    (specialty: Specialty, index: number) => (
-                      <div key={`${specialty}-${index}`}>{specialty}</div>
-                    )
-                  )}
+                  {specialties?.map((specialty: Specialty, index: number) => (
+                    <li key={`${specialty}-${index}`}>{specialty}</li>
+                  ))}
                 </td>
-                <td>{advocate.yearsOfExperience}</td>
-                <td>{advocate.phoneNumber}</td>
+                <td>{yearsOfExperience}</td>
+                <td>{phoneNumber}</td>
               </tr>
             );
           })}
