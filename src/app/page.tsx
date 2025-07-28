@@ -24,13 +24,30 @@ export default function Home() {
   const filteredAdvocates = useMemo(() => {
     if (searchTerm) {
       return advocates.filter((advocate) => {
+        const {
+          firstName,
+          lastName,
+          city,
+          degree,
+          specialties,
+          yearsOfExperience,
+          phoneNumber,
+        } = advocate;
+
+        const formattedSpecialties = specialties?.map((specialty) =>
+          specialty.toUpperCase()
+        );
+
+        const formattedSearchTerm = searchTerm.toUpperCase();
+
         return (
-          advocate.firstName.includes(searchTerm) ||
-          advocate.lastName.includes(searchTerm) ||
-          advocate.city.includes(searchTerm) ||
-          advocate.degree.includes(searchTerm) ||
-          advocate.specialties.includes(searchTerm as Specialty) ||
-          advocate.yearsOfExperience.toString()?.includes(searchTerm)
+          firstName.toUpperCase().includes(formattedSearchTerm) ||
+          lastName.toUpperCase().includes(formattedSearchTerm) ||
+          city.toUpperCase().includes(formattedSearchTerm) ||
+          degree.toUpperCase().includes(formattedSearchTerm) ||
+          formattedSpecialties.includes(formattedSearchTerm as Specialty) ||
+          yearsOfExperience?.toString()?.includes(formattedSearchTerm) ||
+          phoneNumber?.toString()?.includes(formattedSearchTerm)
         );
       });
     }
