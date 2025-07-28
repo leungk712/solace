@@ -1,5 +1,12 @@
 ## Solace Candidate Assignment
 
+## Pull Requests
+
+1. [Part 1: Implement Typings](https://github.com/leungk712/solace/tree/refactor/implement-typings-pt-1)
+2. [Part 2: Update Search Logic and Table](https://github.com/leungk712/solace/tree/refactor/update-search-logic-pt-2)
+3. [Part 3: Update UI](https://github.com/leungk712/solace/tree/refactor/update-ui-pt-3)
+4. [Part 4: Documentation](https://github.com/leungk712/solace/tree/docs/update-documentation-pt-4)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
