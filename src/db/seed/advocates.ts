@@ -1,3 +1,6 @@
+// ===== Interfaces ===== //
+import { Advocate } from "@/app/interfaces/Advocates";
+
 import db from "..";
 import { advocates } from "../schema";
 
@@ -37,7 +40,7 @@ const randomSpecialty = () => {
   return [random1, random2];
 };
 
-const advocateData = [
+const advocateData: Advocate[] = [
   {
     firstName: "John",
     lastName: "Doe",

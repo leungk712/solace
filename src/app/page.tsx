@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from "react";
 
+// ===== Interfaces ===== //
+import { Advocate } from "./interfaces/Advocates";
+
 export default function Home() {
-  const [advocates, setAdvocates] = useState([]);
-  const [filteredAdvocates, setFilteredAdvocates] = useState([]);
+  const [advocates, setAdvocates] = useState<Advocate[]>([]);
+  const [filteredAdvocates, setFilteredAdvocates] = useState<Advocate[]>([]);
 
   useEffect(() => {
     console.log("fetching advocates...");
@@ -16,8 +19,8 @@ export default function Home() {
     });
   }, []);
 
-  const onChange = (e) => {
-    const searchTerm = e.target.value;
+  const onChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    const searchTerm = evt.target.value;
 
     document.getElementById("search-term").innerHTML = searchTerm;
 
